@@ -122,3 +122,11 @@ module.exports = {
   /* ... */
 }
 ```
+
+## Checking & publishing
+
+```npm pack``` - to check packing before publishing
+
+```npm publish``` - to publish package to npmjs
+
+Optionally, create **Github action** to automatically publish.
