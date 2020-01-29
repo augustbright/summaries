@@ -74,3 +74,17 @@ RUN apk add --update redis
 # Step 3. Set primary command to be executed when container is started
 CMD ["redis-server"]
 ```
+
+2. Build an image
+
+```markdown
+docker build [-t image name] .
+docker build .
+docker build augustbright/redis-server:latest
+#   -t  -tag (convention: [user name]/[image name]:[tag])
+
+# COMMIT container changes to make a new image
+#(...interesting but bad approach)
+docker commit -c 'new commands' [container_id]
+docker commit -c 'CMD["redis-server"]' [container_id]
+```
