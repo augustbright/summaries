@@ -7,7 +7,7 @@ docker login
 docker logout
 ```
 
-## MAnipulating images & containers
+## Manipulating images & containers
 
 ```
 # RUN IMAGE (with default command)
@@ -51,4 +51,26 @@ docker kill [container_id]
 # DELETE STOPPED CONTAINERS and other clean up
 docker system prune
 
+```
+
+## Building custom images
+
+1. Create a Dockerfile:
+
+```
+# Dockerfile
+
+# Step 1. Base image
+FROM alpine
+
+# On each step of building process:
+#    1. a temporary container is created from prev. step, 
+#    2. given command is executed on that container
+#    3. a new image is created from that container
+
+# Step 2. Execute a command on intermediate container
+RUN apk add --update redis
+
+# Step 3. Set primary command to be executed when container is started
+CMD ["redis-server"]
 ```
