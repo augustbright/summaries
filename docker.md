@@ -19,7 +19,7 @@ docker run busybox ls
 # run = create + start
 docker create hello-world [?custom command]
 docker start [-a] [container_id]
-    # -a    -attach process.STDOUT => terminal
+#       -a    -attach process.STDOUT => terminal
 
 # SHOW RUNNING CONTAINERS
 docker ps
@@ -33,8 +33,8 @@ docker logs [container_id]
 # EXECUTING COMMANDS in running containers
 docker exec [-it] [container_id] [command]
 docker exec -it ecb344342 redic-cli
-    # -i    -attach terminal => process.STDIN
-    # -t    -nice formatting
+#       -i    -attach terminal => process.STDIN
+#       -t    -nice formatting
 
 # ...or start a shell in container (ctrl+d to exit or type "exit"):
 docker exec [-it] [container_id] sh # ...or bash
@@ -64,7 +64,7 @@ docker system prune
 FROM alpine
 
 # On each step of building process:
-#    1. a temporary container is created from prev. step, 
+#    1. a temporary container is created from prev. step
 #    2. given command is executed on that container
 #    3. a new image is created from that container
 
