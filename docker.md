@@ -11,9 +11,10 @@ docker logout
 
 ```markdown
 # RUN IMAGE (with default command)
-docker run [image] [?custom command]
+docker run -p [local port]:[container port] [image] [?custom command]
 docker run redis
 docker run busybox ls
+docker run -p 8080:8080 webserver
 
 
 # run = create + start
@@ -60,7 +61,7 @@ docker system prune
 ```markdown
 # Dockerfile
 
-# Step 1. Base image
+# Step. Base image
 FROM alpine
 
 # On each step of building process:
@@ -68,10 +69,16 @@ FROM alpine
 #    2. given command is executed on that container
 #    3. a new image is created from that container
 
-# Step 2. Execute a command on intermediate container
+# Step. Execute a command on intermediate container
 RUN apk add --update redis
 
-# Step 3. Set primary command to be executed when container is started
+# Step. Change working directory in container
+WORKDIR usr/app
+
+# Step. Copy some files from building directory to container
+COPY ./ ./
+
+# Step. Set primary command to be executed when container is started
 CMD ["redis-server"]
 ```
 
