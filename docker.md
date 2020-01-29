@@ -2,14 +2,14 @@
 
 ## Auth
 
-```
+```markdown
 docker login
 docker logout
 ```
 
 ## Manipulating images & containers
 
-```
+```markdown
 # RUN IMAGE (with default command)
 docker run [image] [?custom command]
 docker run redis
@@ -57,7 +57,7 @@ docker system prune
 
 1. Create a Dockerfile:
 
-```
+```markdown
 # Dockerfile
 
 # Step 1. Base image
