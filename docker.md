@@ -11,11 +11,17 @@ docker logout
 
 ```markdown
 # RUN IMAGE (with default command)
-docker run -p [local port]:[container port] [image] [?custom command]
+docker run -d -p [local port]:[container port] [image] [?custom command]
 docker run redis
 docker run busybox ls
 docker run -p 8080:8080 webserver
+#   -p  port mapping
+#   -d  detached mode
 
+# VULUMES 
+docker run -v /path/in/container -v /path/in/local:/path/in/container webserver
+#   -v /path/in/container - this dir isn't be mapped
+#   -v /path/in/local:/path/in/container - map local directory => container directory
 
 # run = create + start
 docker create hello-world [?custom command]
@@ -94,4 +100,38 @@ docker build augustbright/redis-server:latest
 #(...interesting but bad approach)
 docker commit -c 'new commands' [container_id]
 docker commit -c 'CMD["redis-server"]' [container_id]
+```
+
+# Docker compose
+
+```
+# Start docker containers from "docker-compose.yml"
+docker-compose up
+docker-compose up -d
+docker-compose up --build
+#   -d -detached mode
+#   --build rebuild containers
+
+# Stop all containers
+docker-compose down
+```
+
+```yaml
+# docker-compose.yml
+
+# Specify version of docker compose
+version: '3'
+
+# Same network is generated for all services
+# Name of service is it's hostname (redis-server, node-app)
+# Container can be built from current Dockerfile
+services:
+    redis-server:
+        image: 'redis'
+
+    node-app:
+        restart: 'no' | always | on-failure | unless-stopped
+        build: .
+        ports:
+            - "8081:8081"
 ```
