@@ -135,3 +135,6 @@ services:
         ports:
             - "8081:8081"
 ```
+
+# Kubernetes
+[install minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/)
