@@ -138,3 +138,37 @@ services:
 
 # Kubernetes
 [install minikube](https://kubernetes.io/ru/docs/tasks/tools/install-minikube/)
+
+```yaml
+# client-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers:
+    - name: client
+      image: stephengrider/multi-client
+      ports:
+        - containerPort: 3000
+```
+
+```yaml
+# client-node-port.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: client-node-port
+spec:
+  type: NodePort
+  ports:
+    - ports: 3050
+      targetPort: 3000
+      nodePort: 31515
+  selector:
+    component: web
+```
