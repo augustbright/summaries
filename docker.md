@@ -175,3 +175,20 @@ spec:
 ![Objects](https://i.imgur.com/UUP5mWY.png)
 ![NodePort Mapping](https://i.imgur.com/cdVu59j.png)
 ![Port Mapping](https://i.imgur.com/5SONIwD.png)
+
+```
+# applying kubectl configuration changes
+
+kubectl apply -f client-pod.yaml
+kubectl apply -f client-node-port.yaml
+
+# get the status of pods
+kubectl get pods
+# get the status of services
+kubectl get services
+```
+
+```
+# get the ip of minikube VM
+minikube ip
+```
