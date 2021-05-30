@@ -172,3 +172,6 @@ spec:
   selector:
     component: web
 ```
+![Objects](https://i.imgur.com/UUP5mWY.png)
+![NodePort Mapping](https://i.imgur.com/cdVu59j.png)
+![Port Mapping](https://i.imgur.com/5SONIwD.png)
