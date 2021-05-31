@@ -191,6 +191,8 @@ kubectl get pods
 kubectl get services
 # get information about object
 kubectl describe <object type> <object name>
+# remove an object
+kubectl remove -f <config file>
 ```
 
 ```
