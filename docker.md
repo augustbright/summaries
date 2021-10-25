@@ -199,3 +199,13 @@ kubectl delete -f <config file>
 # get the ip of minikube VM
 minikube ip
 ```
+
+# Google Cloud
+
+```
+# config gcloud shell to use cluster & project
+
+$ gcloud config set project <project-id>
+$ gcloud config set compute/zone <zone>
+$ gcloud container clusters get-credentials <cluster>
+```
