@@ -191,3 +191,39 @@ For search engines and usability.
   <img src="img_girl.jpg">
 </picture>
 ```
+
+# Favicon
+[https://favicon.cc/](Create a favicon)
+```
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+formats: ICO	PNG	GIF	JPEG	SVG
+```
+
+# Tables
+```
+ <table>
+ <tr> - table row
+ <td> - table data
+ <th> - table header (bold+centered)
+ 
+ <caption>
+ <colgroup>
+ <col>
+ <thead>
+ <tbody>
+ <tfoot>
+ 
+# examples
+ - set column width:
+<th style="width:70%">...</th>
+
+- set column span
+<th colspan="2">...</th>
+
+ - collapse borders
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+```
