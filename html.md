@@ -13,6 +13,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 ```
 
+# Head
+```
+contains:
+ <title> - for browser tab/favorite/search engines results
+ <style>
+ <meta>
+ <link>
+ <script>
+ <base>
+```
+
+# Meta
+```
+ <meta charset="UTF-8">
+ 
+ name="keywords" content="HTML, CSS, JavaScript"
+ name="description" content="Free Web tutorials"
+ name="author" content="John Doe"
+ name="viewport" content="width=device-width, initial-scale=1.0"
+ 
+ http-equiv="refresh" content="30"
+```
+
+# Base
+```
+ <base href="https://www.w3schools.com/" target="_blank">
+```
+
+# Paths
+```
+// better
+picture.jpg -	current folder
+images/picture.jpg -	images in current folder
+/images/picture.jpg -	images in root folder
+../picture.jpg - folder up
+
+// worse
+https://www.w3schools.com/images/picture.jpg - absolute
+```
 
 # Elements
 [HTML Tag Reference](https://www.w3schools.com/tags/default.asp)
@@ -70,6 +109,41 @@ external
  - alpha
   0 - transparent
   1 - non-transparent
+```
+
+# Entities
+[Full Emojis Ref](https://www.w3schools.com/charsets/ref_emoji.asp)
+[Full Symbols Ref](https://www.w3schools.com/charsets/ref_utf_symbols.asp)
+[Full Arrows Ref](https://www.w3schools.com/charsets/ref_utf_arrows.asp)
+[Full Currency Ref](https://www.w3schools.com/charsets/ref_utf_currency.asp)
+```
+	non-breaking space	&nbsp;	&#160;	
+<	less than	&lt;	&#60;	
+>	greater than	&gt;	&#62;	
+&	ampersand	&amp;	&#38;	
+"	double quotation mark	&quot;	&#34;	
+'	single quotation mark (apostrophe)	&apos;	&#39;
+©	copyright	&copy;	&#169;	
+®	registered trademark	&reg;	&#174;
+```
+
+# Semantics
+```
+ - <article> - independent, self-contained content
+ - <aside> - some content aside from the content it is placed in (like a sidebar)
+ - <footer> - a footer for a document or section
+ - <header> - container for introductory content or a set of navigational links
+ - <main> - main content of a document
+ - <mark> - marked/highlighted text
+ - <nav> - a set of navigation links
+ - <section> -  a thematic grouping of content, typically with a heading 
+ - <time> - a date/time
+ 
+ - <details> - additional details that the user can view or hide
+ - <summary> - a visible heading for a <details> element
+ 
+ - <figcaption> - a caption for a <figure> element
+ - <figure> - self-contained content, like illustrations, diagrams, photos, code listings, etc
 ```
 
 # Formatting
@@ -135,6 +209,7 @@ For search engines and usability.
    _blank - Opens the document in a new window or tab
    _parent - Opens the document in the parent frame
    _top - Opens the document in the full body of the window
+   iframe_name = Opens the document in an iframe
 
 - unvisited - blue (:link)
 - visited - purple (:visited)
@@ -209,16 +284,28 @@ formats: ICO	PNG	GIF	JPEG	SVG
  <caption>
  <colgroup>
  <col>
+
  <thead>
  <tbody>
  <tfoot>
  
 # examples
+<table>
+ <caption>...</caption>
+ <tr>
+  <th>...</th>
+  <td>...</td>
+ </tr>
+</table>
+
+
  - set column width:
 <th style="width:70%">...</th>
 
 - set column span
 <th colspan="2">...</th>
+- set row span
+<th rowspan="2">...</th>
 
  - collapse borders
 table, th, td {
@@ -226,4 +313,53 @@ table, th, td {
   border-collapse: collapse;
 }
 
+```
+
+# Lists
+```
+ list-style-type: disc/circle/square/none
+
+ <ul>	- unordered list
+ <ol>	- ordered list (type = 1/A/a/I/i, start=50)
+ <li>	- list item
+
+ <dl>	- description list
+ <dt> -	description term
+ <dd> -	description definition
+```
+
+# IFrames
+```
+ - nested Browsing Context
+ - own Session History
+
+ # basic
+ <iframe src="url" title="description"></iframe>
+ 
+ # Link for iframe
+ <iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+ <a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+
+```
+
+# Computercode
+```
+ - <kbd> - keyboard input
+ - <samp> - sample output from a computer program
+ - <code> - a piece of computer code
+ - <var> - a variable in programming or in a mathematical expression
+ - <pre> - preformatted text
+```
+
+# HTML vs XHTML
+```
+ - <!DOCTYPE> is mandatory
+ - The xmlns attribute in <html> is mandatory
+ - <html>, <head>, <title>, and <body> are mandatory
+ - Elements must always be properly nested
+ - Elements must always be closed
+ - Elements must always be in lowercase
+ - Attribute names must always be in lowercase
+ - Attribute values must always be quoted
+ - Attribute minimization is forbidden
 ```
