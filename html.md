@@ -342,6 +342,144 @@ table, th, td {
 
 ```
 
+# Forms
+```html
+	<form
+		action="/action_page.php"
+		target="_black/_self/.../framename"
+		method="GET/POST"
+		autocomplete="on/off"
+
+		novalidate
+		
+		accept-charset="utf-8"
+		name="myForm"	// is used to reference elements in a JavaScript, or to reference form data after a form is submitted
+
+		// can be used only if method="post".
+		enctype="application/x-www-form-urlencoded"
+		enctype="multipart/form-data"
+		enctype="text/plain"
+		
+		rel="external"	// Specifies that the referenced document is not a part of the current site
+		rel="help"	// Links to a help document
+		rel="license"	// Links to copyright information for the document
+		rel="next"	// The next document in a selection
+		rel="nofollow"	// Links to an unendorsed document, like a paid link.
+		// ("nofollow" is used by Google, to specify that the Google search spider should not follow that link)
+		rel="noopener"	 
+		rel="noreferrer"	// Specifies that the browser should not send a HTTP referrer header if the user follows the hyperlink
+		rel="opener"	 
+		rel="prev"	// The previous document in a selection
+		rel="search"	// Links to a search tool for the document
+	>
+		<label for="field-id">label: </label>	// when the user clicks the text within the <label> element, it toggles the radio button/checkbox
+		<input name="field-name" id="field-id" type="text">	Displays a single-line text input field
+
+		<select
+			id="cars"
+			name="cars"
+			
+			size="3" // number of visible elements
+			multiple // ?cars=volvo&cars=saab&cars=fiat
+		>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+
+			<optgroup label="Swedish Cars">	// group related options in a <select> element
+
+				<option value="volvo">Volvo</option>
+				<option
+					value="saab"
+					selected // predefined selected option
+				>Saab</option>
+			</optgroup>
+		</select>
+
+		<textarea
+			name="message"
+
+			rows="10"
+			cols="30"
+			style="width:200px; height:600px;"
+		>
+			The cat was playing in the garden.
+		</textarea>
+		
+		<button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+		<fieldset>	// group related data in a form
+			<legend>Personalia:</legend>	// defines a caption for the <fieldset> element.
+
+			<label for="fname">First name:</label><br>
+			<input type="text" id="fname" name="fname" value="John"><br>
+			<label for="lname">Last name:</label><br>
+			<input type="text" id="lname" name="lname" value="Doe"><br><br>
+		</fieldset>
+
+		// list of pre-defined options for an <input> element
+		<input name="browser" list="browsers">	// The list attribute of the <input> element, must refer to the id attribute of the <datalist> element
+		<datalist id="browsers">
+			<option value="Internet Explorer">
+			<option value="Firefox">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		
+		// represents the result of a calculation (like one performed by a script)
+		<output name="x" for="a b"></output>
+		
+		<input type="password">	// defines a password field
+		<input type="button">	// defines a button
+		<input type="radio">	// defines a radio button
+		<input type="color">	// color picker
+		<input type="date">	// date
+		<input type="datetime-local">	// datetime, without TZ
+		<input type="month">	// a month and year
+		<input type="time">	// time, without TZ
+		<input type="week">	// a week and year
+		<input type="email">	// email
+		<input type="file">	// defines a file-select field and a "Browse" button for file uploads
+		<input type="image">
+		<input type="number">	// defines a numeric input field
+		<input type="range" id="vol" name="vol" min="0" max="50">	// defines a control for entering a number whose exact value is not important (like a slider)
+		<input type="search">	// is used for search fields (a search field behaves like a regular text field)
+		<input type="tel">	// is used for input fields that should contain a telephone number
+		<input type="url">	// is used for input fields that should contain a URL address
+
+		<input type="hidden">	// defines a hidden input field (not visible to a user)
+
+		<input type="reset">	// defines a reset button that will reset all form values to their default values
+		<input type="submit">	// Displays a submit button (for submitting the form)
+		
+		<input
+			value="initial value"
+			readonly	// cannot be modified (however, a user can tab to it, highlight it, and copy the text from it)
+			disabled	// unusable and un-clickable, not sent!
+			size="20"	// the visible width, in characters, of an input field (text, search, tel, url, email, and password)
+			maxlength="10"	// the maximum number of characters allowed in an input field
+			min/max="10"	// minimum and maximum values for an input field (number, range, date, datetime-local, month, time and week)
+			multiple	// email and file
+			pattern="[A-Za-z]{3}"	// a regular expression that the input field's value is checked against, when the form is submitted (text, date, search, url, tel, email, and password)
+			placeholder="foo"	// short hint that describes the expected value of an input field
+			required	// must be filled out before submitting the form
+			step="2"	// legal number intervals for an input field (number, range, date, datetime-local, month, time and week)
+			autofocus	// input field should automatically get focus when the page loads
+			height/width="200"	// for image input
+			list="list-id"	// refers to a <datalist> element that contains pre-defined options for an <input> element
+			autocomplete="on/off"	// input field should have autocomplete on or off (text, search, url, tel, email, password, datepickers, range, and color)
+			form="form-id"	// the form the <input> element belongs to
+
+			formaction="/url"	// overrides the action attribute of the <form> element (image, submit)
+			formenctype="multipart/form-data"	// overrides the enctype attribute of the <form> element (image, submit)
+			formmethod="GET/POST"	// overrides the method attribute of the <form> element (image, submit)
+			formtarget="_blank"	// overrides the target attribute of the <form> element (image, submit)
+			formnovalidate		// overrides the novalidate attribute of the <form> element (submit)
+		/>
+	</form>
+	
+```
+
 # Computercode
 ```
  - <kbd> - keyboard input
