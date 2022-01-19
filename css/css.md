@@ -44,3 +44,10 @@ When **MULTIPLE** stylesheet,
 1. Inline style (inside an HTML element)
 2. External and internal style sheets (in the head section)
 3. Browser default
+
+# Backgrounds
+
+```
+background-color: <color>;
+background-image: url("/path/to/image");
+```
