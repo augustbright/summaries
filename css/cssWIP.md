@@ -45,9 +45,29 @@ When **MULTIPLE** stylesheet,
 2. External and internal style sheets (in the head section)
 3. Browser default
 
+# Colors
+```
+  - keyword
+  - #hexademical notation
+  - rgb(...) / rgba(...) [red green blue]
+  - hsl(...) / hsla(...) [hue saturation lightness]
+  - hwb(194 0% 0%), hwb(194 0% 0% / .4) [hue whiteness blackness]
+  - lch(29.2345% 44.2 27), lch(52.2345% 72.2 56.2 / .5) [lightness chroma hue]
+  - lab(29.2345% 39.3825 20.0664), lab(52.2345% 40.1645 59.9971 / .5) [lightness a-axis b-axis]
+  - color(display-p3 1 0.5 0 / .5)
+```
+
+# Gradients
+```
+```
+
 # Backgrounds
 
 ```
 background-color: <color>;
-background-image: url("/path/to/image");
+background-image: none/url(...)/image()/image-set()/element()/paint()/cross-fade()/<gradient>;
+background-repeat: no-repeat/repeat/repeat-x/repeat-y/revert/round/space;
+background-position: center/top right/100px/30% 40%;
+background-attachment: scroll/fixed;
+background: <color> <image> <repeat> <attachment> <position>;
 ```
