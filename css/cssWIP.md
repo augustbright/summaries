@@ -13,6 +13,22 @@
   element1, element2
 ```
 
+# Pseudo-classes
+```
+:active
+:autofill - input autofilled by browser
+:checked - radio, cb, option is on
+:default - form elements that are the default in a group of related elements
+:defined - defined elements (built in or custom)
+:disabled - elements in disabled state (no click, type or focus)
+:empty - no child nodes or text
+:enabled - may be activated or accept focus
+:first-child | :first-of-type | :first (@page)
+:focus | :focus-visible - focused and it's visible by user
+:focus-within - element or descendant is focused
+:fullscreen - elements currently in full-screen mode
+```
+
 ```
 external CSS
   <link rel="stylesheet" href="mystyle.css">
