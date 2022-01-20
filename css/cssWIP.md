@@ -61,6 +61,18 @@
 :host
 ```
 
+# Pseudo-elements
+```
+::after(:after) - creates last child of the selected element
+::before(:before) - creates first child of the selected element
+::backdrop - element behind fullscreen element
+::first-letter(:first-letter) - first letter of the first line of a block-level element
+::first-line(:first-line) - first line of a block-level element
+::placeholder - in input or textarea
+::selection - part of the document highlighted by user
+
+::cue - WebVTT cues within a selected element
+::slotted()
 ```
 external CSS
   <link rel="stylesheet" href="mystyle.css">
