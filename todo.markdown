@@ -1,5 +1,8 @@
 # CSS
 - shadow DOM css
+- transform, transition, animation
+- flex, grid
+- fonts
 
 # HTTP
 - encodings

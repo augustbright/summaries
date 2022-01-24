@@ -30,30 +30,17 @@
 @counter-style <counter-style-name> {
   [ system: <counter-system>; ] ||
   [ symbols: <counter-symbols>; ] ||
-  [ additive-symbols: <additive-symbols>; ] ||
-  [ negative: <negative-symbol>; ] ||
-  [ prefix: <prefix>; ] ||
-  [ suffix: <suffix>; ] ||
-  [ range: <range>; ] ||
-  [ pad: <padding>; ] ||
-  [ speak-as: <speak-as>; ] ||
-  [ fallback: <counter-style-name>; ]
+	...
 }
 
 @font-face {
   [ font-family: <family-name>; ] ||
   [ src: <src>; ] ||
-  [ unicode-range: <unicode-range>; ] ||
   [ font-variant: <font-variant>; ] ||
-  [ font-feature-settings: <font-feature-settings>; ] ||
-  [ font-variation-settings: <font-variation-settings>; ] ||
   [ font-stretch: <font-stretch>; ] ||
   [ font-weight: <font-weight>; ] ||
   [ font-style: <font-style>; ] ||
-  [ size-adjust: <size-adjust>; ] ||
-  [ ascent-override: <ascent-override>; ] ||
-  [ descent-override: <descent-override>; ] ||
-  [ line-gap-override: <line-gap-override>; ]
+	...
 }
 TrueType			font/ttf
 OpenType			font/otf
@@ -63,77 +50,12 @@ Web Open Font Format 2		font/woff2
 @font-feature-values <family-name># {
   <feature-value-block-list>
 }
-where 
-<family-name> = <string> | <custom-ident>+
-<feature-value-block-list> = <feature-value-block>+
-
-where 
-<feature-value-block> = <feature-type> '{' <feature-value-declaration-list> '}'
-
-where 
 <feature-type> = @stylistic | @historical-forms | @styleset | @character-variant | @swash | @ornaments | @annotation
-<feature-value-declaration-list> = <feature-value-declaration>
-
-where 
-<feature-value-declaration> = <custom-ident>: <integer>+;
-
 
 @import [ <string> | <url> ]
         [ layer | layer(<layer-name>) ]?
         [ supports( [ <supports-condition> | <declaration> ] ) ]?
         <media-query-list>? ;
-where 
-<supports-condition> = not <supports-in-parens> | <supports-in-parens> [ and <supports-in-parens> ]* | <supports-in-parens> [ or <supports-in-parens> ]*
-<media-query-list> = <media-query>#
-
-where 
-<supports-in-parens> = ( <supports-condition> ) | <supports-feature> | <general-enclosed>
-<media-query> = <media-condition> | [ not | only ]? <media-type> [ and <media-condition-without-or> ]?
-
-where 
-<supports-feature> = <supports-decl> | <supports-selector-fn>
-<general-enclosed> = [ <function-token> <any-value> ) ] | ( <ident> <any-value> )
-<media-condition> = <media-not> | <media-and> | <media-or> | <media-in-parens>
-<media-type> = <ident>
-<media-condition-without-or> = <media-not> | <media-and> | <media-in-parens>
-
-where 
-<supports-decl> = ( <declaration> )
-<supports-selector-fn> = selector( <complex-selector> )
-<media-not> = not <media-in-parens>
-<media-and> = <media-in-parens> [ and <media-in-parens> ]+
-<media-or> = <media-in-parens> [ or <media-in-parens> ]+
-<media-in-parens> = ( <media-condition> ) | <media-feature> | <general-enclosed>
-
-where 
-<complex-selector> = <compound-selector> [ <combinator>? <compound-selector> ]*
-<media-feature> = ( [ <mf-plain> | <mf-boolean> | <mf-range> ] )
-
-where 
-<compound-selector> = [ <type-selector>? <subclass-selector>* [ <pseudo-element-selector> <pseudo-class-selector>* ]* ]!
-<combinator> = '>' | '+' | '~' | [ '||' ]
-<mf-plain> = <mf-name> : <mf-value>
-<mf-boolean> = <mf-name>
-<mf-range> = <mf-name> [ '<' | '>' ]? '='? <mf-value> | <mf-value> [ '<' | '>' ]? '='? <mf-name> | <mf-value> '<' '='? <mf-name> '<' '='? <mf-value> | <mf-value> '>' '='? <mf-name> '>' '='? <mf-value>
-
-where 
-<type-selector> = <wq-name> | <ns-prefix>? '*'
-<subclass-selector> = <id-selector> | <class-selector> | <attribute-selector> | <pseudo-class-selector>
-<pseudo-element-selector> = ':' <pseudo-class-selector>
-<pseudo-class-selector> = ':' <ident-token> | ':' <function-token> <any-value> ')'
-<mf-name> = <ident>
-<mf-value> = <number> | <dimension> | <ident> | <ratio>
-
-where 
-<wq-name> = <ns-prefix>? <ident-token>
-<ns-prefix> = [ <ident-token> | '*' ]?  | 
-<id-selector> = <hash-token>
-<class-selector> = '.' <ident-token>
-<attribute-selector> = '[' <wq-name> ']' | '[' <wq-name> <attr-matcher> [ <string-token> | <ident-token> ] <attr-modifier>? ']'
-
-where 
-<attr-matcher> = [ '~' |  |  | '^' | '$' | '*' ]? '='
-<attr-modifier> = i | s
 
 @keyframes <keyframes-name> {
  from {}
