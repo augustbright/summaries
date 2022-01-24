@@ -10,7 +10,7 @@
 - statuses
 - content-types
 
-# HTTP
+# HML
 - ARIA
-- meta types
-- link
+- REFERRER
+- CSP
