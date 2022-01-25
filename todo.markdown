@@ -5,6 +5,7 @@
 - fonts
 
 # HTTP
+- MIME types
 - encodings
 - headers
 - statuses
