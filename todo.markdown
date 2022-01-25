@@ -5,11 +5,9 @@
 - fonts
 
 # HTTP
-- MIME types
-- encodings
 - headers
 - statuses
-- content-types
+- oauth
 
 # HML
 - ARIA

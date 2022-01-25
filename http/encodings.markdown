@@ -1,0 +1,4 @@
+- gzip - Lembel-Ziv coding (UNIX _gzip_ program)
+- compress - Lempel-Ziv-Welch (UNIX _compress_ program)
+- defalte - using zlib
+- br - Brotli algorythm
